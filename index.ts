@@ -2,12 +2,6 @@
 import './style.css';
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
-appDiv.innerHTML = `<div>
-    <h1>Shopping List</h1>
-    <input placeholder="please add your item" id="itemInput" type="text" required/> <button id="addItemButton" >add item</button>
-    <input placeholder="search" id="itemToSearch" type="text"/> <button id="searchItem" >search</button>
-    <ul id="itemList"></ul>
-</div>`;
 let itemInput = document.getElementById('itemInput') as HTMLInputElement;
 let itemToSearch = document.getElementById('itemToSearch') as HTMLInputElement;
 const listItem = document.getElementById('itemList');
@@ -28,7 +22,7 @@ class ShoppingList implements ShoppingListType {
     if (option) {
       for (const grocery of this.groceries) {
         node.innerHTML =
-          '<button id =' + grocery + '>delete</button>' + grocery;
+          '<button type="button" class="btn btn-outline-danger">X</button>' + grocery;
         listItem.appendChild(node);
         node.addEventListener('click', this.removeItemAction, false);
       }

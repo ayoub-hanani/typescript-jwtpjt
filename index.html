@@ -1,1 +1,31 @@
-<div id="app"></div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="d-float">
+      <h1 class="m-1 p-1">Shopping List</h1>
+      <div class="input-group flex-wrap m-2 p-0">
+        <input type="text" class="form-control" placeholder="search" id="itemToSearch" type="text">
+        <div class="input-group-prepend">
+          <button id="searchItem" class="btn btn-outline-primary">search</button>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="input-group flex-nowrap m-2 p-0">
+      <div class="input-group-prepend">
+          <button id="addItemButton" class="btn btn-success" >add item</button>
+      </div>
+      <input type="text" class="form-control" placeholder="please add your item" id="itemInput" type="text">
+    </div>
+
+      <div>
+        <ul class="list-group" id="itemList">
+          <li></li>
+        </ul>
+    </div>
+  </body>
+</html>
