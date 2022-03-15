@@ -53,6 +53,8 @@ class ShoppingList implements ShoppingListType {
         const groceriesSearched = this.groceries.filter(
           (grocery) => itemToSearch.value !== grocery
         );
+        console.log(groceriesSearched);
+        document.getElementById("myDropdown").classList.toggle("show");
       }
     });
   }
