@@ -5,6 +5,7 @@ const appDiv: HTMLElement = document.getElementById('app');
 let itemInput = document.getElementById('itemInput') as HTMLInputElement;
 let itemToSearch = document.getElementById('itemToSearch') as HTMLInputElement;
 const listItem = document.getElementById('itemList');
+let myDropdown = document.getElementById('myDropdown');
 type Grocery = 'Pear' | 'Banana' | 'Ananas';
 interface ShoppingListType {
   groceries: Grocery[];
@@ -19,10 +20,11 @@ class ShoppingList implements ShoppingListType {
   };
   render = (option) => {
     const node = document.createElement('li');
+    node.className= "list-group-item m-1";
     if (option) {
       for (const grocery of this.groceries) {
         node.innerHTML =
-          '<button type="button" class="btn btn-outline-danger">X</button>' + grocery;
+          '<button type="button" class="btn btn-outline-danger m-1">X</button>' + grocery;
         listItem.appendChild(node);
         node.addEventListener('click', this.removeItemAction, false);
       }
@@ -51,10 +53,15 @@ class ShoppingList implements ShoppingListType {
       if (itemToSearch.value == '') alert('please write something');
       else {
         const groceriesSearched = this.groceries.filter(
-          (grocery) => itemToSearch.value !== grocery
+          (grocery) => itemToSearch.value == grocery
         );
+        const a = document.createElement('a');
+      for (const grocery of this.groceries) {
+        a.innerHTML = grocery;
+        myDropdown.appendChild(a);
+      }
         console.log(groceriesSearched);
-        document.getElementById("myDropdown").classList.toggle("show");
+        searchButton.classList.toggle("show");
       }
     });
   }
